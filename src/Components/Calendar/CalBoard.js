@@ -11,26 +11,90 @@ export default class CalBoard extends React.Component{
 
         this.state = {
             weekDays: {
-                week1Days: [1, 2, 3, 4, 5, 6, 7],
-                week2Days: [8,9,10,11,12,13,14],
-                week3Days: [15,16,17,18,19,20,21],
-                week4Days: [22,23,24,25,26,27,28],
-                clicked:[false,false,false,false,false,false,false]
-            },
-            day:null
+                week1: {
+                    days: [1, 2, 3, 4, 5, 6, 7],
+                    clicked: [false, false, false, false, false, false, false]
+                },
+                week2: {
+                    days: [8, 9, 10, 11, 12, 13, 14],
+                    clicked: [false, false, false, false, false, false, false]
+                },
+                week3: {
+                    days: [15, 16, 17, 18, 19, 20, 21],
+                    clicked: [false, false, false, false, false, false, false]
+                },
+                week4: {
+                    days: [22, 23, 24, 25, 26, 27, 28],
+                    clicked: [false, false, false, false, false, false, false]
+                }
+            }
         }
     }
+    week1 = (day) => {
+        let clicked1 = this.state.weekDays.week1.clicked
+        let week1 = {...this.state.weekDays.week1}
 
-    highlight = (day) => {
-        let clicked = this.state.weekDays.clicked
-        let weekDays = {...this.state.weekDays}
-        let week1Days = [...this.state.weekDays.week1Days]
-
-        weekDays.clicked[day] = !weekDays.clicked[day]
+        week1.clicked[day] = !week1.clicked[day]
         this.setState({
-            weekDays: {...this.state.weekDays, clicked},
-            day:day +1
+            weekDays: {...this.state.weekDays, clicked1},
+            day:this.state.weekDays.week1.days[day]
         })
+
+        if(week1.clicked[day] == false){
+            this.setState({
+                day:''
+            })
+        }
+
+    }
+    week2 = (day) => {
+        let clicked2 = this.state.weekDays.week2.clicked
+        let week2 = {...this.state.weekDays.week2}
+
+        week2.clicked[day] = !week2.clicked[day]
+        this.setState({
+            weekDays: {...this.state.weekDays, clicked2},
+            day:this.state.weekDays.week2.days[day]
+        })
+        if(week2.clicked[day] == false){
+            this.setState({
+                day:''
+            })
+        }
+
+    }
+    week3 = (day) => {
+        let clicked3 = this.state.weekDays.week3.clicked
+        let week3 = {...this.state.weekDays.week3}
+
+
+        week3.clicked[day] = !week3.clicked[day]
+        this.setState({
+            weekDays: {...this.state.weekDays, clicked3},
+            day:this.state.weekDays.week3.days[day]
+        })
+        if(week3.clicked[day] == false){
+            this.setState({
+                day:''
+            })
+        }
+
+    }
+    week4 = (day) => {
+        let clicked4 = this.state.weekDays.week4.clicked
+        let week4 = {...this.state.weekDays.week4}
+
+
+        week4.clicked[day] = !week4.clicked[day]
+        this.setState({
+            weekDays: {...this.state.weekDays, clicked4},
+            day:this.state.weekDays.week4.days[day]
+        })
+        if(week4.clicked[day] == false){
+            this.setState({
+                day:''
+            })
+        }
 
     }
 
@@ -50,16 +114,16 @@ export default class CalBoard extends React.Component{
                     </tr>
 
 
-                        <Week1 weekDays={this.state.weekDays} day={this.state.weekDays.week1Days} maybe={this.highlight.bind(this)}/>
+                        <Week1 weekDays={this.state.weekDays} day={this.state.weekDays.week1.days} maybe={this.week1.bind(this)}/>
 
 
-                        <Week2 weekDays={this.state.weekDays} day={this.state.weekDays.week2Days} maybe={this.highlight.bind(this)}/>
+                        <Week2 weekDays={this.state.weekDays} day={this.state.weekDays.week2.days} maybe={this.week2.bind(this)}/>
 
 
-                        <Week3 weekDays={this.state.weekDays} day={this.state.weekDays.week3Days} maybe={this.highlight.bind(this)}/>
+                        <Week3 weekDays={this.state.weekDays} day={this.state.weekDays.week3.days} maybe={this.week3.bind(this)}/>
 
 
-                        <Week4 weekDays={this.state.weekDays} day={this.state.weekDays.week4Days} maybe={this.highlight.bind(this)}/>
+                        <Week4 weekDays={this.state.weekDays} day={this.state.weekDays.week4.days} maybe={this.week4.bind(this)}/>
 
                     </tbody>
                 </table>

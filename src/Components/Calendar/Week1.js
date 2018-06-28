@@ -15,8 +15,8 @@ export default class Week1 extends React.Component{
         return(
             <tr>
                 {
-                    weekDays.week1Days.map((day,i) =>{
-                           return <td onClick={this.props.maybe} className={weekDays.clicked[i] ? 'selected': null}  key={i}>
+                    weekDays.week1.days.map((day,i) =>{
+                           return <td onClick={this.props.maybe.bind(day,i)} className={weekDays.week1.clicked[i] ? 'selected': null}  key={i}>
                                 {day}</td>
                 })
                 }

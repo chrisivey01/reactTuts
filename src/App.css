@@ -26,6 +26,11 @@
   background-color: blue;
 }
 
+.tictac{
+  border:solid;
+  height:15px;
+  width:15px;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

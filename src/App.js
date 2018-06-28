@@ -6,6 +6,8 @@ import WeightDisplay from './Components/Weights/WeightDisplay'
 
 import CalBoard from './Components/Calendar/CalBoard'
 
+import Chess from './Components/Chess/GameBoard'
+
 class App extends Component {
   render() {
     return (
@@ -15,6 +17,9 @@ class App extends Component {
           <WeightDisplay/>
 
           <CalBoard/>
+
+          <Chess/>
+
       </div>
     );
   }
