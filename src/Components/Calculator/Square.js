@@ -1,5 +1,6 @@
 import React from 'react'
 import Total from './Total'
+import Input from './Input'
 
 export default class Square extends React.Component{
     constructor(props) {
@@ -10,8 +11,10 @@ export default class Square extends React.Component{
                     '1', '2', '3','-',
                     '0', '.', '=','+'
             ],
-            number1:'0',
-            number2:'0'
+            number1:null,
+            number2:null,
+            sign:null,
+            total:'0'
         }
     }
 
@@ -19,25 +22,39 @@ export default class Square extends React.Component{
         let numberPicked = this.state.square[clicked];
         let math = this.state.square;
 
-        this.setState({
-            number1:numberPicked
-        })
+
+
+        if(this.state.number1 === null) {
+            this.setState({
+                number1: numberPicked
+            })
+        }else if(numberPicked == '/' || 'x' || '-' || '+'){
+            this.setState({
+                sign:numberPicked
+            })
+        }else{
+            this.setState({
+                number2: numberPicked
+            })
+        }
 
     }
 
     render() {
 
-        const {square} = this.state;
+        const {square, number1, number2, total, sign} = this.state;
         return <div>
             <div id='calc'>
                 { square.map((number,clicked) =>{
                     return (
-                        <Total allNumber={square} key={clicked} number={number} math={this.math.bind(this, clicked)} />
+                        <Total allNumber={square} key={clicked} sign={sign} number={number} math={this.math.bind(this, clicked)} />
                     );
                 })
                 }
             </div>
-            <input value={this.state.number1}/>
+
+            <Input numba1={number1} numba2={number2} total={total}/>
+
             <button onClick={this.clear}>Clear</button>
         </div>
     }
