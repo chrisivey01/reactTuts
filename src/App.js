@@ -8,6 +8,8 @@ import CalBoard from './Components/Calendar/CalBoard'
 
 import Chess from './Components/Chess/GameBoard'
 
+import Square from './Components/Calculator/Square'
+
 class App extends Component {
   render() {
     return (
@@ -20,6 +22,7 @@ class App extends Component {
 
           <Chess/>
 
+          <Square/>
       </div>
     );
   }
