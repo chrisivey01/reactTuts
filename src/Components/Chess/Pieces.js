@@ -7,14 +7,11 @@ export default class Pieces extends React.Component{
 
 
 
-    render(){
-        return(
-            <span onClick={this.props.try}>
-                &nbsp;
-                {this.props.pieces.xPiece}
-                {this.props.pieces.oPiece}
-                &nbsp;
-            </span>
-        )
+    clickHandler = () =>{
+        this.props.tileClick(this.props.key, this.props.turn);
+    }
+
+    render() {
+        return <div className={this.props.status === '' ? 'tile' : 'tile status-' + this.props.status} onClick={this.clickHandler}>{this.props.status}</div>
     }
 }

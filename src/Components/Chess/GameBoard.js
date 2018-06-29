@@ -6,75 +6,50 @@ export default class GameBoard extends React.Component {
         super(props)
         this.state = {
             gameBoard: {
-                size: [3, 3, 3]
+                tiles: [
+                    '', '', '',
+                    '', '', '',
+                    '', '', ''
+                ]
             },
-            pieces: {
-                oPiece: '',
-                xPiece: '',
-                clicked:false
-            },
+            turn:'o'
         }
     }
 
-    xOrO = (picked,i) =>{
+    tileClick = (position) => {
+        let player = this.state.turn;
+        let tiles = this.state.gameBoard.tiles;
+        //If the selected position is already filled, return to prevent it being replaced.
+        if ( (tiles[position] === 'x' || tiles[position] === 'o') ) return;
+        tiles[position] = player;
+        this.setState({tiles: tiles, turn: player === 'o' ? 'x' : 'o'});
 
-        let pieces = {...this.state.pieces}
+    }
 
-        pieces.clicked = !pieces.clicked;
-
-
-
-        if(pieces.clicked == true){
-            pieces.xPiece = '',
-            pieces.oPiece = 'O'
-        }else{
-            pieces.oPiece = '',
-            pieces.xPiece = 'X'
-        }
-
+    clear = () =>{
+        let gameBoard = {...this.state.gameBoard}
+        let tiles = ['','','',
+                    '','','',
+                    '','','']
+        gameBoard.tiles = [...tiles]
         this.setState({
-            pieces:pieces
+            gameBoard:gameBoard
         })
-
-
     }
 
     render() {
-        const {gameBoard} = this.state
-        return (
-            <div>
-                <table style={{margin:'auto'}}>
-                    <tbody>
-                    <tr>
-                        {
-                            gameBoard.size.map((size, i) => {
-                                return <td className="tictac">
-                                    <Pieces pieces={this.state.pieces} try={this.xOrO.bind(this,i)}/>
-                                </td>
-                            })
-                        }
-                    </tr>
-                    <tr>
-                        {
-                            gameBoard.size.map((size, i) => {
-                                return <td className="tictac">
-                                    <Pieces pieces={this.state.pieces} try={this.xOrO.bind(this,i)}/>
-                                </td>
-                            })
-                        }
-                    </tr>
-                    <tr>
-                        {
-                            gameBoard.size.map((size, i) => {
-                                return <td className="tictac">
-                                    <Pieces pieces={this.state.pieces} try={this.xOrO.bind(this,i)} />
-                                </td>
-                            })
-                        }
-                    </tr>
-                    </tbody>
-                </table>
+
+        const {gameBoard} = this.state;
+        return <div>
+            <div id='game'>
+                { gameBoard.tiles.map((tile,position) =>{
+                    return (
+                        <Pieces status={tile} key={position} turn={this.state.turn} tileClick={this.tileClick.bind(this, position)} />
+                    );
+                })
+                }
             </div>
-        )
+            <button onClick={this.clear}>Clear</button>
+        </div>
     }
 }
