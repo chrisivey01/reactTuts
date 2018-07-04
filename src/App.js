@@ -10,10 +10,18 @@ import Chess from './Components/Chess/GameBoard'
 
 import Square from './Components/Calculator/Square'
 
+import ChessGame from './Components/ChessGame/GameBoard'
+
+import V2Chess from './Components/v2Chess/V2Chess'
+
 class App extends Component {
   render() {
     return (
       <div className="App">
+          <V2Chess/>
+
+          <ChessGame/>
+
           <TodoList/>
 
           <WeightDisplay/>
