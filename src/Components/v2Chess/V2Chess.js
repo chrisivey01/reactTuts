@@ -1,110 +1,121 @@
 import React from 'react'
-import Box from './V2Chess'
-import BlackPawns from './V2Chess'
 
+let move;
+let newMove;
 export default class V2Chess extends React.Component{
     constructor(){
         super()
         this.state={
             board:[[],[]],
-            cols : ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+            cBoard : [],
             rows : [8, 7, 6, 5, 4, 3, 2, 1],
             cells:[]
 
         }
+
     }
+    move = (i,rows, event ) =>{
+        let b;
+        let piece = event.target
 
+        console.log(rows[i].props)
+        if(move === undefined) {
+            move = piece;
 
-    makeBoard = () =>{
-        // let {board} = this.state
-        let cBoard;
-        let columns = []
-        // Outer loop to create parent
-        for (let i = 0; i < 8; i++) {
-            let rows = []
-
-
-            if(i === 0 ){
-                for(let i=0; i<8; i++) {
-                    rows.push(<td className='chessSquare'></td>)
-                }
-            }
-            //Load Black Pawns
-            if(i===1){
-                for(let i=0; i<8; i++) {
-                    rows.push(<td className='chessSquare'>&#9823;</td>)
-                }
-            }
-
-            if(i === 2 || i === 3 || i=== 4 || i === 5){
-                for(let i=0; i<8; i++) {
-                    rows.push(<td className='chessSquare'></td>)
-                }
-            }
-
-
-            //Load White Pawns
-            if(i===6){
-                for(let i=0; i<8; i++) {
-                    rows.push(<td className='chessSquare'  onClick={this.move.bind(this,i)}>&#9817;</td>)
-                }
-            }
-            if(i===7){
-                for(let i=0; i<8; i++) {
-                    rows.push(<td className='chessSquare'></td>)
-                }
-            }
-            columns.push(<tr>{rows}</tr>)
-            cBoard = [[columns],[rows]]
+            //move.splice(i, 1, piece)
+        }else{
+            newMove = event.target
+            newMove.innerHTML = move.innerHTML;
+            move.innerHTML = "";
+            move = undefined;
         }
-        return cBoard
     }
-
-    move = (i,event) =>{
-        console.log(event.target.value)
-    }
-
 
     render(){
 
-        return(
-            <div className = "chessboard">
-                <table>
-                    <tbody>
-                    {this.makeBoard()}
-                    </tbody>
-                </table>
-            </div>
+        let rows = [];
+        // Outer loop to create parent
+        for (let i = 0; i < 8; i++) {
 
+            // if(i % 2 )
+            let row = [];
+            if(i === 0 ){
+                row = [];
+                for(let i=0; i<8; i++) {
+                    row.push(<td className={i % 2 ? 'light-square' : 'dark-square'}></td>)
+                }
+                rows.push(<tr>{row}</tr>);
+            }
+            //Load Black Pawns
+            if(i===1){
+                row = [];
+                for(let i=0; i<8; i++) {
+                    row.push(<td className={i % 2 ? 'dark-square': 'light-square' } onClick={this.move.bind(this,i,row)}>&#9823;</td>)
+                }
+                rows.push(<tr>{row}</tr>);
+            }
+
+            if(i === 2 ){
+                row = [];
+
+                for(let i=0; i<8; i++) {
+                    row.push(<td className={i % 2 ? 'light-square' : 'dark-square'} onClick={this.move.bind(this,i,row)}></td>)
+                }
+                rows.push(<tr>{row}</tr>);
+            }
+            if(i === 3 ){
+                row = [];
+
+                for(let i=0; i<8; i++) {
+                    row.push(<td className={i % 2 ? 'dark-square': 'light-square'} onClick={this.move.bind(this,i,row)}></td>)
+                }
+                rows.push(<tr>{row}</tr>);
+            }
+
+            if(i === 4){
+                row = [];
+
+                for(let i=0; i<8; i++) {
+                    row.push(<td className={i % 2 ? 'light-square' : 'dark-square'} onClick={this.move.bind(this,i,row)}></td>)
+                }
+                rows.push(<tr>{row}</tr>);
+            }
+
+            if(i === 5){
+                row = [];
+
+                for(let i=0; i<8; i++) {
+                    row.push(<td className={i % 2 ? 'dark-square': 'light-square'} onClick={this.move.bind(this,i,row)}></td>)
+                }
+                rows.push(<tr>{row}</tr>);
+            }
+
+            //Load White Pawns
+            if(i===6){
+                row = [];
+
+                for(let i=0; i<8; i++) {
+                    row.push(<td className={i % 2 ? 'light-square' : 'dark-square'} onClick={this.move.bind(this,i,row)}>&#9817;</td>)
+                }
+                rows.push(<tr>{row}</tr>);
+            }
+
+            if(i === 7){
+                row = [];
+
+                for(let i=0; i<8; i++) {
+                    row.push(<td className={i % 2 ? 'dark-square': 'light-square'}></td>)
+                }
+                rows.push(<tr>{row}</tr>);
+            }
+        }
+
+        return(
+            <table className = "chessboard">
+                <tbody>
+                    {rows}
+                </tbody>
+            </table>
         )
     }
-
-        // const {dA} = this.state;
-        // const cols = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
-        // const rows = [8, 7, 6, 5, 4, 3, 2, 1]
-        //
-        //     // for(let i =0; i<8; i++) {
-        //     //     columns.push('A ')
-        //     //     rows.push('A ')
-        //     // }
-        // return <table className="board">
-        //     {rows.map((row, rowIndex) =>
-        //         <tr className="board-row" key={row}>
-        //             <td>{row}</td>
-        //             {cols === 2 ?
-        //                 <td>
-        //                     {cols.map((col, colIndex) =>
-        //                         <BlackPawns/>)}
-        //                 </td>
-        //             }
-
-                    // {/*{cols.map((col, colIndex) =>*/}
-                    // {/*<td id={`${col}${row}`} key={col}>{col}</td>*/}
-                    //
-                    // {/*)}*/}
-        //         </tr>
-        //
-        // </table>
-    // }
-
 }

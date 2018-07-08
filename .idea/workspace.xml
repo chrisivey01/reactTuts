@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bfe1835-a64c-4f36-823b-5567ef820892" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Components/Calculator/Equals.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Components/Calculator/Equations.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Components/ChessGame/BlackMain.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Components/ChessGame/BlackPawns.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Components/ChessGame/GameBoard.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Components/ChessGame/Pieces.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Components/ChessGame/Squares.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Components/ChessGame/WhiteMain.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Components/ChessGame/WhitePawns.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Components/v2Chess/BlackPawns.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Components/v2Chess/Box.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Components/v2Chess/V2Chess.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/App.css" afterPath="$PROJECT_DIR$/src/App.css" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Calculator/Input.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Calculator/Square.js" afterPath="$PROJECT_DIR$/src/Components/Calculator/Square.js" />
+      <change beforePath="$PROJECT_DIR$/src/Components/v2Chess/V2Chess.js" afterPath="$PROJECT_DIR$/src/Components/v2Chess/V2Chess.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,11 +17,9 @@
       <file leaf-file-name="V2Chess.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/v2Chess/V2Chess.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="109" column="0" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="109" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1545">
+              <caret line="103" column="25" lean-forward="true" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -44,8 +27,8 @@
       <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="59" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+            <state relative-caret-position="399">
+              <caret line="128" column="27" lean-forward="false" selection-start-line="128" selection-start-column="27" selection-end-line="128" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -126,8 +109,8 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+            <state relative-caret-position="102">
+              <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -177,7 +160,6 @@
         <option value="$PROJECT_DIR$/src/Components/Calculator/Equations.js" />
         <option value="$PROJECT_DIR$/src/Components/Calculator/Equals.js" />
         <option value="$PROJECT_DIR$/src/Components/Calculator/Square.js" />
-        <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/Components/ChessGame/Pieces.js" />
         <option value="$PROJECT_DIR$/src/Components/ChessGame/Squares.js" />
         <option value="$PROJECT_DIR$/src/Components/ChessGame/WhiteRook.js" />
@@ -190,6 +172,7 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Components/v2Chess/Box.js" />
         <option value="$PROJECT_DIR$/src/Components/v2Chess/BlackPawns.js" />
+        <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/Components/v2Chess/V2Chess.js" />
       </list>
     </option>
@@ -390,12 +373,12 @@
       <option name="presentableId" value="Default" />
       <updated>1530016978939</updated>
       <workItem from="1530016980356" duration="3976000" />
-      <workItem from="1530032910169" duration="111060000" />
+      <workItem from="1530032910169" duration="121102000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115036000" />
+    <option name="totallyTimeSpent" value="125078000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -632,7 +615,7 @@
         <state relative-caret-position="114">
           <caret line="122" column="18" lean-forward="true" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -642,7 +625,7 @@
         <state relative-caret-position="570">
           <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -668,16 +651,6 @@
         <state relative-caret-position="120">
           <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="45" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -741,19 +714,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="59" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+        <state relative-caret-position="399">
+          <caret line="128" column="27" lean-forward="false" selection-start-line="128" selection-start-column="27" selection-end-line="128" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/v2Chess/V2Chess.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="109" column="0" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="109" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1545">
+          <caret line="103" column="25" lean-forward="true" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
