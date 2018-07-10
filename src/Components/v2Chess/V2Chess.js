@@ -1,4 +1,5 @@
 import React from 'react'
+import Pieces from './Pieces'
 
 let move;
 let newMove;
@@ -7,18 +8,20 @@ export default class V2Chess extends React.Component{
         super()
         this.state={
             board:[[],[]],
-            cBoard : [],
-            rows : [8, 7, 6, 5, 4, 3, 2, 1],
-            cells:[]
-
         }
 
     }
-    move = (i,rows, event ) =>{
+
+    evenCheck = (num) =>{
+        return num % 2 == 0
+    }
+    move = (j,board, event ) =>{
         let b;
         let piece = event.target
 
-        console.log(rows[i].props)
+        this.setState({board:board})
+
+        console.log(board[j].props)
         if(move === undefined) {
             move = piece;
 
@@ -33,87 +36,23 @@ export default class V2Chess extends React.Component{
 
     render(){
 
-        let rows = [];
-        // Outer loop to create parent
-        for (let i = 0; i < 8; i++) {
-
-            // if(i % 2 )
+        let board = []
+        for(let i =0; i <8; i++){
             let row = [];
-            if(i === 0 ){
-                row = [];
-                for(let i=0; i<8; i++) {
-                    row.push(<td className={i % 2 ? 'light-square' : 'dark-square'}></td>)
-                }
-                rows.push(<tr>{row}</tr>);
+            for(let j=0; j<8; j++){
+                row.push(<td className={this.evenCheck(i) &&  this.evenCheck(j)||
+                (!this.evenCheck(i) && !this.evenCheck(j)) ?  'light-square' : 'dark-square'}
+                onClick={this.move.bind(this,j,board)}>
+                    <Pieces index={i}/>
+                </td>)
             }
-            //Load Black Pawns
-            if(i===1){
-                row = [];
-                for(let i=0; i<8; i++) {
-                    row.push(<td className={i % 2 ? 'dark-square': 'light-square' } onClick={this.move.bind(this,i,row)}>&#9823;</td>)
-                }
-                rows.push(<tr>{row}</tr>);
-            }
-
-            if(i === 2 ){
-                row = [];
-
-                for(let i=0; i<8; i++) {
-                    row.push(<td className={i % 2 ? 'light-square' : 'dark-square'} onClick={this.move.bind(this,i,row)}></td>)
-                }
-                rows.push(<tr>{row}</tr>);
-            }
-            if(i === 3 ){
-                row = [];
-
-                for(let i=0; i<8; i++) {
-                    row.push(<td className={i % 2 ? 'dark-square': 'light-square'} onClick={this.move.bind(this,i,row)}></td>)
-                }
-                rows.push(<tr>{row}</tr>);
-            }
-
-            if(i === 4){
-                row = [];
-
-                for(let i=0; i<8; i++) {
-                    row.push(<td className={i % 2 ? 'light-square' : 'dark-square'} onClick={this.move.bind(this,i,row)}></td>)
-                }
-                rows.push(<tr>{row}</tr>);
-            }
-
-            if(i === 5){
-                row = [];
-
-                for(let i=0; i<8; i++) {
-                    row.push(<td className={i % 2 ? 'dark-square': 'light-square'} onClick={this.move.bind(this,i,row)}></td>)
-                }
-                rows.push(<tr>{row}</tr>);
-            }
-
-            //Load White Pawns
-            if(i===6){
-                row = [];
-
-                for(let i=0; i<8; i++) {
-                    row.push(<td className={i % 2 ? 'light-square' : 'dark-square'} onClick={this.move.bind(this,i,row)}>&#9817;</td>)
-                }
-                rows.push(<tr>{row}</tr>);
-            }
-
-            if(i === 7){
-                row = [];
-
-                for(let i=0; i<8; i++) {
-                    row.push(<td className={i % 2 ? 'dark-square': 'light-square'}></td>)
-                }
-                rows.push(<tr>{row}</tr>);
-            }
+            board.push(<tr>{row}</tr>)
         }
 
         return(
             <table className = "chessboard">
                 <tbody>
-                    {rows}
+                    {board}
                 </tbody>
             </table>
         )
