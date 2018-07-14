@@ -18,38 +18,36 @@ export default class GameBoard extends React.Component{
 
     whiteMain = () =>{
         return [
-            <div className='chessSquare'>&#9814;</div>,
-            <div className='chessSquare'>&#9816;</div>,
-            <div className='chessSquare'>&#9815;</div>,
-            <div className='chessSquare'>&#9812;</div>,
-            <div className='chessSquare'>&#9813;</div>,
-            <div className='chessSquare'>&#9815;</div>,
-            <div className='chessSquare'>&#9816;</div>,
-            <div className='chessSquare'>&#9814;</div>
+            <div key={0} className='chessSquare'>&#9814;</div>,
+            <div key={1} className='chessSquare'>&#9816;</div>,
+            <div key={2} className='chessSquare'>&#9815;</div>,
+            <div key={3} className='chessSquare'>&#9812;</div>,
+            <div key={4} className='chessSquare'>&#9813;</div>,
+            <div key={5} className='chessSquare'>&#9815;</div>,
+            <div key={6} className='chessSquare'>&#9816;</div>,
+            <div key={7} className='chessSquare'>&#9814;</div>
         ]
     }
 
     blackMain = () =>{
         return [
-            <div className='chessSquare'>&#9820;</div>,
-            <div className='chessSquare'>&#9822;</div>,
-            <div className='chessSquare'>&#9821;</div>,
-            <div className='chessSquare'>&#9818;</div>,
-            <div className='chessSquare'>&#9819;</div>,
-            <div className='chessSquare'>&#9821;</div>,
-            <div className='chessSquare'>&#9822;</div>,
-            <div className='chessSquare'>&#9820;</div>
+            <div key={0} className='chessSquare'>&#9820;</div>,
+            <div key={1} className='chessSquare'>&#9822;</div>,
+            <div key={2} className='chessSquare'>&#9821;</div>,
+            <div key={3} className='chessSquare'>&#9818;</div>,
+            <div key={4} className='chessSquare'>&#9819;</div>,
+            <div key={5} className='chessSquare'>&#9821;</div>,
+            <div key={6} className='chessSquare'>&#9822;</div>,
+            <div key={7} className='chessSquare'>&#9820;</div>
 
         ]
     }
 
     move = (square,position,e) =>{
-
-        let a = e.currentTarget.value
     }
 
     render(){
-        const {squares,main} = this.state
+        const {squares} = this.state
         return(
             <div id='board'>
 

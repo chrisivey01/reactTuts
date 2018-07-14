@@ -40,7 +40,7 @@ export default class CalBoard extends React.Component{
             day:this.state.weekDays.week1.days[day]
         })
 
-        if(week1.clicked[day] == false){
+        if(week1.clicked[day] === false){
             this.setState({
                 day:''
             })
@@ -56,7 +56,7 @@ export default class CalBoard extends React.Component{
             weekDays: {...this.state.weekDays, clicked2},
             day:this.state.weekDays.week2.days[day]
         })
-        if(week2.clicked[day] == false){
+        if(week2.clicked[day] === false){
             this.setState({
                 day:''
             })
@@ -73,7 +73,7 @@ export default class CalBoard extends React.Component{
             weekDays: {...this.state.weekDays, clicked3},
             day:this.state.weekDays.week3.days[day]
         })
-        if(week3.clicked[day] == false){
+        if(week3.clicked[day] === false){
             this.setState({
                 day:''
             })
@@ -90,7 +90,7 @@ export default class CalBoard extends React.Component{
             weekDays: {...this.state.weekDays, clicked4},
             day:this.state.weekDays.week4.days[day]
         })
-        if(week4.clicked[day] == false){
+        if(week4.clicked[day] === false){
             this.setState({
                 day:''
             })

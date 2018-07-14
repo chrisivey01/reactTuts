@@ -2,7 +2,7 @@ import React from 'react'
 
 export default class Week4 extends React.Component{
     constructor(props){
-        super(props)
+        super()
 
 
     }
