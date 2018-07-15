@@ -11,23 +11,28 @@ export default class Pieces extends React.Component {
         }
     }
 
+
+
     piecePosition = (type,side,i) => {
+        function selectPiece (piece){
+            console.log(piece)
+        }
 
         for (i = 0; i < 64; i++) {
             if (this.props.side === "W") {
                 switch (this.props.piece) {
                     case "R":
-                        return <span>&#9814;</span>;
+                        return <span onClick={function(){selectPiece('WR')}}>&#9814;</span>;
                     case "N":
-                        return <span>&#9816;</span>;
+                        return <span onClick={function(){selectPiece('WN')}}>&#9816;</span>;
                     case "B":
-                        return <span>&#9815;</span>;
+                        return <span onClick={function(){selectPiece('WB')}}>&#9815;</span>;
                     case "Q":
-                        return <span>&#9813;</span>;
+                        return <span onClick={function(){selectPiece('WQ')}}>&#9813;</span>;
                     case "K":
-                        return <span>&#9812;</span>;
+                        return <span onClick={function(){selectPiece('WK')}}>&#9812;</span>;
                     case "P":
-                        return <span>&#9817;</span>;
+                        return <span onClick={function(){selectPiece('WP')}}>&#9817;</span>;
                     case "":
                         return <span></span>;
                     default:
@@ -36,17 +41,17 @@ export default class Pieces extends React.Component {
                 // Black
                 switch (this.props.piece) {
                     case "R":
-                        return <span>&#9820;</span>;
+                        return <span onClick={function(){selectPiece('BR')}}>&#9820;</span>;
                     case "N":
-                        return <span>&#9822;</span>;
+                        return <span onClick={function(){selectPiece('BN')}}>&#9822;</span>;
                     case "B":
-                        return <span>&#9821;</span>;
+                        return <span onClick={function(){selectPiece('BB')}}>&#9821;</span>;
                     case "Q":
-                        return <span>&#9819;</span>;
+                        return <span onClick={function(){selectPiece('BQ')}}>&#9819;</span>;
                     case "K":
-                        return <span>&#9818;</span>;
+                        return <span onClick={function(){selectPiece('BK')}}>&#9818;</span>;
                     case "P":
-                        return <span>&#9823;</span>;
+                        return <span onClick={function(){selectPiece('BP')}}>&#9823;</span>;
                      default:
                 }
             }
