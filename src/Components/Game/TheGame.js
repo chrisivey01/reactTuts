@@ -38,7 +38,7 @@ export default class TheGame extends React.Component {
             for (let j = 0; j < 8; j++) {
                 row.push(
                     <td key={j} className={(this.evenCheck(i) && this.evenCheck(j)) || (!this.evenCheck(i) && !this.evenCheck(j)) ? 'light-square' : 'dark-square'}>
-                        <ThePieces piece={this.piecesArray[i][j].type} side={this.piecesArray[i][j].side} index={j}/>
+                        <ThePieces piece={this.piecesArray[i][j].type} side={this.piecesArray[i][j].side} position={i + "" + j}index={j}/>
                     </td>)
             }
             board.push(<tr key={i}>{row}</tr>)
