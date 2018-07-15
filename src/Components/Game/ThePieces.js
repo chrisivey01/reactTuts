@@ -1,20 +1,21 @@
 
 import React from 'react'
-var chessRules = require('chess-rules');
 
 
 export default class Pieces extends React.Component {
     constructor(props) {
-        super(props)
+        super()
         this.state={
+            type: String,
+            side: String
         }
     }
 
     piecePosition = (type,side,i) => {
 
         for (i = 0; i < 64; i++) {
-            if (this.props[i].side === "W") {
-                switch (this.props[i].type) {
+            if (this.props.side === "W") {
+                switch (this.props.piece) {
                     case "R":
                         return <span>&#9814;</span>;
                     case "N":
@@ -29,22 +30,24 @@ export default class Pieces extends React.Component {
                         return <span>&#9817;</span>;
                     case "":
                         return <span></span>;
+                    default:
                 }
             } else {
                 // Black
-                switch (this.props[i].type) {
+                switch (this.props.piece) {
                     case "R":
-                        return "&#9820;";
+                        return <span>&#9820;</span>;
                     case "N":
-                        return "&#9822;";
+                        return <span>&#9822;</span>;
                     case "B":
-                        return "&#9821;";
+                        return <span>&#9821;</span>;
                     case "Q":
-                        return "&#9819;";
+                        return <span>&#9819;</span>;
                     case "K":
-                        return "&#9818;";
+                        return <span>&#9818;</span>;
                     case "P":
-                        return "&#9823;";
+                        return <span>&#9823;</span>;
+                     default:
                 }
             }
         }

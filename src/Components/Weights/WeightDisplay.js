@@ -84,9 +84,9 @@ export default class WeightDisplay extends React.Component {
                     <button onClick={this.calc}>Calc</button>
                 </div>
                 <div>
-                    <WeightTable fortyFives={this.state.fortyFives} twentyFives={this.state.twentyFives}
-                                   tens={this.state.tens} fives={this.state.fives}
-                                   twoPointFives={this.state.twoPointFives} leftOver={this.state.leftOver}/>
+                    <WeightTable fortyFives={fortyFives} twentyFives={twentyFives}
+                                   tens={tens} fives={fives}
+                                   twoPointFives={twoPointFives} leftOver={leftOver}/>
                 </div>
             </div>
         )

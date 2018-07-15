@@ -26,8 +26,6 @@ export default class Square extends React.Component{
 
     math = (clicked) => {
         let numberPicked = this.state.square[clicked];
-
-        let mathStuff = this.state.mathStuff;
         let number1 = this.state.number1;
         let number2 = this.state.number2;
 

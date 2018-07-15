@@ -50,10 +50,6 @@ export default class Pieces extends React.Component {
     }
 
     render() {
-
-
-        const {BPawn} = this.state
-
         return <span>{this.piecePosition(this.props.piece,this.props.side)}</span>
     }
 }

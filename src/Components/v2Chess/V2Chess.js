@@ -56,10 +56,9 @@ export default class V2Chess extends React.Component{
 
     }
     evenCheck = (num) =>{
-        return num % 2 == 0
+        return num % 2 === 0
     }
     move = (j,board, event ) =>{
-        let b;
         let piece = event.target
         let game = {}
 
@@ -74,28 +73,8 @@ export default class V2Chess extends React.Component{
 
     render(){
 
-        // let chessPieces = []
-        // let pieces = (chessRules.getInitialPosition().board);
-        //
-        // for(let i =0; i<pieces.length; i++) {
-        //     chessPieces.push(Object.values(pieces[i]))
-        // }
-        //
-        // let board = []
-        // for(let i =0; i <8; i++){
-        //     let row = [];
-        //     for(let j=0; j<8; j++){
-        //         row.push(<td className={this.evenCheck(i) &&  this.evenCheck(j)||
-        //         (!this.evenCheck(i) && !this.evenCheck(j)) ?  'light-square' : 'dark-square'}
-        //         onClick={this.move.bind(this,j,board)}>
-        //             <Pieces index={i}/>
-        //         </td>)
-        //     }
-        //     board.push(<tr>{row}</tr>)
-        //
-        // }
-
-        return(
+return(
+    {
             <table className = "chessboard">
                 <tbody>
                 <tr>

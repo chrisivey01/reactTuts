@@ -3,7 +3,7 @@ import React from 'react'
 
 export default class Equations extends React.Component{
     constructor(props){
-        super(props)
+        super()
     }
 
 

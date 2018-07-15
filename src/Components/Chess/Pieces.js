@@ -2,7 +2,7 @@ import React from 'react'
 
 export default class Pieces extends React.Component{
     constructor(props){
-        super(props)
+        super()
     }
 
 
